@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:./data/sctec-empreendimentos-dev.db
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+
+logging:
+  level:
+    com.sctec.empreendimentos: DEBUG
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG

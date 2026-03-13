@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: sctec-empreendimentos
+
+  datasource:
+    url: jdbc:sqlite:./data/sctec-empreendimentos.db
+    driver-class-name: org.sqlite.JDBC
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.community.dialect.SQLiteDialect
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.sctec.empreendimentos: DEBUG
+    org.springframework.security: INFO
