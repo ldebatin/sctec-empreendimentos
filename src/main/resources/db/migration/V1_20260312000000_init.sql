@@ -1,0 +1,2 @@
+-- V1: Schema inicial
+-- Adicione aqui as tabelas iniciais do projeto
