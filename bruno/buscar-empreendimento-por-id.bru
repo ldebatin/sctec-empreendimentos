@@ -1,0 +1,15 @@
+meta {
+  name: Buscar Empreendimento por ID
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/empreendimentos/1
+  body: none
+  auth: none
+}
+
+vars:pre-request {
+  baseUrl: http://localhost:8080
+}

@@ -1,0 +1,31 @@
+meta {
+  name: Criar Empreendimento
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/empreendimentos
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "nome": "Indústria Sul Catarinense",
+    "nomeEmpreendedor": "Roberto Nascimento",
+    "municipio": "Criciúma",
+    "segmento": "INDUSTRIA",
+    "email": "roberto@industria-sul.com.br",
+    "telefone": "(48) 96666-4004",
+    "status": "ATIVO"
+  }
+}
+
+vars:pre-request {
+  baseUrl: http://localhost:8080
+}
