@@ -28,9 +28,8 @@ public class GlobalExceptionHandler {
             String field = ((FieldError) error).getField();
             errors.put(field, error.getDefaultMessage());
         });
-        ErrorResponse response = new ErrorResponse(HttpStatus.BAD_REQUEST.value(), "Erro de validação");
-        response.setErrors(errors);
-        return ResponseEntity.badRequest().body(response);
+        return ResponseEntity.badRequest()
+                .body(new ErrorResponse(HttpStatus.BAD_REQUEST.value(), "Erro de validação", errors));
     }
 
     @ExceptionHandler(Exception.class)
@@ -44,7 +43,8 @@ public class GlobalExceptionHandler {
             this(status, message, LocalDateTime.now(), null);
         }
 
-        public void setErrors(Map<String, String> errors) {
+        public ErrorResponse(int status, String message, Map<String, String> errors) {
+            this(status, message, LocalDateTime.now(), errors);
         }
     }
 }
