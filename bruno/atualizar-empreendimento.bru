@@ -1,0 +1,31 @@
+meta {
+  name: Atualizar Empreendimento
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/api/empreendimentos/1
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "nome": "TechCatarinense Atualizado",
+    "nomeEmpreendedor": "Ana Paula Silva",
+    "municipio": "Florianópolis",
+    "segmento": "TECNOLOGIA",
+    "email": "ana@techcatarinense.com.br",
+    "telefone": "(48) 99999-1001",
+    "status": "INATIVO"
+  }
+}
+
+vars:pre-request {
+  baseUrl: http://localhost:8080
+}

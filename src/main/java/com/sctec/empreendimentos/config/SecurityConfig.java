@@ -18,6 +18,7 @@ public class SecurityConfig {
             .sessionManagement(session ->
                 session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/api/doc/**", "/api/doc/openapi/**").permitAll()
                 .anyRequest().permitAll()
             );
 
